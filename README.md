@@ -1,2 +1,0 @@
-# HelloHarmony
-HelloHarmony

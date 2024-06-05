@@ -1,0 +1,54 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\admin\\.ohos\\config\\default_HelloHarmony_Ub8tnxBrawlaxeAOLG6yOP4nZu0Zd8RDe6zGhE1-FKA=.cer",
+          "storePassword": "0000001A7B0A30C9812C65848A30708C5E82A00DB0B037C613CEB0D4A7039A803280867695CC4DBCD6FE",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A2244E212F0EE6FD1477CB19FA1867BB32055E0F45357CA4BF8446DA8295283529B5594B3A797",
+          "profile": "C:\\Users\\admin\\.ohos\\config\\default_HelloHarmony_Ub8tnxBrawlaxeAOLG6yOP4nZu0Zd8RDe6zGhE1-FKA=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\admin\\.ohos\\config\\default_HelloHarmony_Ub8tnxBrawlaxeAOLG6yOP4nZu0Zd8RDe6zGhE1-FKA=.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": "4.1.0(11)",
+        "compatibleSdkVersion": "4.1.0(11)",
+        "runtimeOS": "HarmonyOS",
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "library",
+      "srcPath": "./library"
+    }
+  ]
+}
