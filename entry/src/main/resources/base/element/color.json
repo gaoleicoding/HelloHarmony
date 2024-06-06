@@ -1,8 +1,72 @@
 {
   "color": [
     {
-      "name": "start_window_background",
+      "name": "color_black",
+      "value": "#000000"
+    },
+    {
+      "name": "color_black_20",
+      "value": "#33000000"
+    },
+    {
+      "name": "color_black_40",
+      "value": "#66000000"
+    },
+    {
+      "name": "color_black_45",
+      "value": "#73000000"
+    },
+    {
+      "name": "color_black_60",
+      "value": "#99000000"
+    },
+    {
+      "name": "color_black_65",
+      "value": "#A6000000"
+    },
+    {
+      "name": "color_black_85",
+      "value": "#D9000000"
+    },
+    {
+      "name": "color_white",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "color_white_60",
+      "value": "#99FFFFFF"
+    },
+    {
+      "name": "color_white_80",
+      "value": "#CCFFFFFF"
+    },
+    {
+      "name": "color_3D444D",
+      "value": "#3D444D"
+    },
+    {
+      "name": "color_blue_main",
+      "value": "#FF409FFF"
+    },
+    {
+      "name": "color_blue_3388FF",
+      "value": "#3388FF"
+    },
+    {
+      "name": "color_gray_e5",
+      "value": "#E5E5E5"
+    },
+    {
+      "name": "color_gray_f8",
+      "value": "#F8F8F8"
+    },
+    {
+      "name": "color_12151A",
+      "value": "#12151A"
+    },
+    {
+      "name": "color_main_red",
+      "value": "#FF553A"
     }
   ]
 }

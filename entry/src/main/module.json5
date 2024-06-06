@@ -20,7 +20,7 @@
         "icon": "$media:layered_image",
         "label": "$string:EntryAbility_label",
         "startWindowIcon": "$media:app_icon",
-        "startWindowBackground": "$color:start_window_background",
+        "startWindowBackground": "$color:color_white",
         "exported": true,
         "skills": [
           {

@@ -1,7 +1,7 @@
-import CommonUtil from '../../../../../library/src/main/ets/components/CommonUtil';
+import CommonUtil from '../../../../../library/src/main/ets/utils/CommonUtil';
+import showToast from '../../../../../library/src/main/ets/utils/ToastUtil';
 import JSInterface from '../bean/JSInterface';
 import EventbusUtil from '../utils/EventbusUtil';
-import showToast from '../utils/ToastUtil';
 import web_webview from '@ohos.web.webview';
 import { Lifecycle, LiveEventBus, MState } from '@ohos/liveeventbus';
 
@@ -58,5 +58,9 @@ struct Index {
   //生命周期感知对象
   getLifecycle(): Lifecycle {
     return this.mLifecycle
+  }
+  pageTransition() {
+    PageTransitionEnter({ type: RouteType.None, duration: 0 })
+    PageTransitionExit({ type: RouteType.None, duration: 0 })
   }
 }

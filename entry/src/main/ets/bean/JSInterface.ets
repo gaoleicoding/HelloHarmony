@@ -4,6 +4,7 @@ import EventbusUtil from '../utils/EventbusUtil';
 import JSONUtil from '../utils/JSONUtil';
 
 export default class JSInterface {
+
   webCallNative(json: string) {
     console.info('JSInterface', 'json:' + json)
     let hybridEntity = JSONUtil.json2Bean(HybridEntity, json)
