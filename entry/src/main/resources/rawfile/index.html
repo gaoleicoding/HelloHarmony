@@ -1,0 +1,49 @@
+<?xml version="1.0 encoding="utf-8?>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>H5与Android交互</title>
+    <script src="action.js"></script>
+    <script>
+   function nativeCallWeb(json){
+<!--      alert(JSON.stringify(json));-->
+      document.querySelector('#location').innerHTML = '  ' +  json.data.address
+   }
+    </script>
+</head>
+<body>
+<button style="width: 200px; height: 50px;font-size: 36px;" onclick="action(6)">隐藏标题</button>
+
+<h2>
+    <a href="kyxlstu://fifedu.com?appType=aioral&userNo=319201020202&code=aiit&appKey=OKXQCw8KCQrZEwLk7EvYNfTqQbOJySNE9DIzA3Q3WcjoJGG1VITZ33UEqHAbKWLA&sign=2e8a23b43cfbf0dee3948dc34bb672f9&eventType=1"
+       style="font-size:36px">唤醒学生端</a>
+</h2>
+<h2>
+    <a href="kyxltea://fifedu.com?appType=aiteaoral&userNo=2021011902&code=aiit&appKey=OKXQCw8KCQrZEwLk7EvYNfTqQbOJySNE9DIzA3Q3WcjoJGG1VITZ33UEqHAbKWLA&sign=f8dde70a6ea9d8cd0ec66d517dfd8737&eventType=1"
+       style="font-size:36px">唤醒教师端</a>
+</h2>
+<h2>
+    <a href="kyxlstu://fifedu.com?appFlag=aioral&userNo=xs001&code=ouchn&appKey=10001&sign=6df089e072761018018671f08d8dcac6&eventType=1"
+       style="font-size:36px">跳转到首页</a>
+</h2>
+<h2>
+    <a href="kyxlstu://fifedu.com?appFlag=aioral&userNo=xs001&code=ouchn&appKey=10001&sign=6df089e072761018018671f08d8dcac6&eventType=2"
+       style="font-size:36px">跳转到形考列表</a>
+</h2>
+<h2>
+    <a href="kyxlstu://fifedu.com?appFlag=aioral&userNo=xs001&code=ouchn&appKey=10001&sign=6df089e072761018018671f08d8dcac6&eventType=3&eventId=044a8ed2cb294c0494030b89cc90c457"
+       style="font-size:36px">跳转到形考单元列表</a>
+</h2>
+
+<button onclick="action(1)" style="font-size:36px">获取位置</button>
+<span id="location" style="font-size:36px"></span>
+
+
+<h2 style="font-family: Symbol" >μ显示为了m</h2>
+<img
+        src="https://test.fifedu.com/static/fiftest//upload/image/20220426/86fde1bb67924d339c2de7d17b55e7b5.svg"
+        alt=""
+/>
+
+</body>
+</html>
