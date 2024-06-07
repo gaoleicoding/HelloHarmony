@@ -1,29 +1,32 @@
 import WebView from '@ohos.web.webview';
-import router from '@ohos.router';
 import TitleView from '../view/TitleView';
+import TagUtil from '../utils/TagUtil';
+import HomeAppObj from '../js/HomeAppObj';
 import LogUtil from '../utils/LogUtil';
 
-@Entry
 @Component
-export default struct WebViewPage {
+export default struct WebViewComponent {
   TAG: string = 'WebViewPage'
   isUseWebTile: boolean = false
   isShowTitleView: boolean = true
   controller: WebView.WebviewController = new WebView.WebviewController()
-  weburl: string = (router.getParams() as Record<string, Object>)['weburl'] as string;
-  title: string = (router.getParams() as Record<string, Object>)['title'] as string;
-  objName: string = (router.getParams() as Record<string, Object>)['objName'] as string;
+  @Prop weburl: string | Resource = ''
+  title: string = ''
+  objName: string = ''
   registerName: string = ''
   // 声明需要注册的对象
-  @State registerObj?: object = new Object();
+  @State registerObj?: object = new Object()
   registerMethod?: Array<string>
 
+  // 声明需要注册的对象
   build() {
     Column() {
-      TitleView({
-        title: this.title
-      }).width('100%')
-        .height($r('app.float.virtual_pixel_50'))
+      if (this.isShowTitleView) {
+        TitleView({
+          title: this.title
+        }).width('100%')
+          .height($r('app.float.virtual_pixel_50'))
+      }
       Web({ src: this.weburl, controller: this.controller })
         .width('100%')
         .layoutWeight(1)
@@ -31,12 +34,6 @@ export default struct WebViewPage {
           if (this.isUseWebTile) {
             // this.title=event?.title
           }
-        })// 将对象注入到web端
-        .javaScriptProxy({
-          object: this.registerObj,
-          name: this.registerName,
-          methodList: this.registerMethod,
-          controller: this.controller
         })
         .domStorageAccess(true)//设置是否开启文档对象模型存储接口（DOM Storage API）权限，默认未开启。
         .fileAccess(true)//设置是否开启应用中文件系统的访问，默认启用。
@@ -49,9 +46,20 @@ export default struct WebViewPage {
         .multiWindowAccess(false)//设置是否开启多窗口权限，默认不开启。
         .cacheMode(CacheMode.Default)//设置缓存模式。
         .copyOptions(CopyOptions.CROSS_DEVICE)//设置剪贴板复制范围选项。
-        .zoomAccess(false) //设置是否支持手势进行缩放，默认允许执行缩放。
+        .zoomAccess(false)//设置是否支持手势进行缩放，默认允许执行缩放。
+        .databaseAccess(true)//设置是否开启数据库存储API权限，默认不开启。
+        .allowWindowOpenMethod(true)
+        .enableNativeEmbedMode(true)
+          // 将对象注入到web端
+        .javaScriptProxy({
+          object: this.registerObj,
+          name: this.registerName,
+          methodList: this.registerMethod,
+          controller: this.controller
+        })
     }.width('100%')
     .height('100%')
+    .backgroundColor(Color.Blue)
   }
 
   aboutToAppear(): void {
@@ -59,6 +67,11 @@ export default struct WebViewPage {
     LogUtil.debug('WebViewPage', 'title：' + this.title)
     LogUtil.debug('WebViewPage', 'objName：' + this.objName)
 
+    if (TagUtil.HOME_APP_JUMP === this.objName) {
+      this.registerName = 'iplat'
+      this.registerObj = new HomeAppObj()
+      this.registerMethod = ["jump_more", 'jump_app', 'jump_apps', 'webCallNative']
+    }
   }
 
   pageTransition() {

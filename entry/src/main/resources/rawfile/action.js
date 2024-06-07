@@ -76,7 +76,7 @@ function callNative(command) {
         window.webkit.messageHandlers.webCallNative.postMessage(jsonString);
     } else {
         // android androidInjected
-        window.androidInjected?.webCallNative(jsonString);
+        window.iplat?.webCallNative(jsonString);
 
     }
 }

@@ -3,7 +3,7 @@ import TitleView from '../view/TitleView';
 
 @Entry
 @Component
-export struct SettingPage {
+export struct MainPage {
   aar: string[] = ['前端和应用交互', 'WebView', '回调']
 
   build() {

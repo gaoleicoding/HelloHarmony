@@ -1,38 +1,26 @@
-import CommonUtil from '../../../../../library/src/main/ets/utils/CommonUtil';
 import showToast from '../../../../../library/src/main/ets/utils/ToastUtil';
-import JSInterface from '../bean/JSInterface';
 import EventbusUtil from '../utils/EventbusUtil';
 import web_webview from '@ohos.web.webview';
 import { Lifecycle, LiveEventBus, MState } from '@ohos/liveeventbus';
+import WebViewComponent from '../component/WebViewComponent';
+import TagUtil from '../utils/TagUtil';
+import TitleView from '../view/TitleView';
 
 @Entry
 @Component
-struct Index {
+struct WebNaivePage {
   private mLifecycle: Lifecycle = new Lifecycle(MState.INITIALIZED);
-  @State message: string = 'Hello World';
   webviewController: web_webview.WebviewController = new web_webview.WebviewController();
-  // 声明需要注册的对象
-  @State testObj: JSInterface = new JSInterface();
 
   build() {
     Column() {
-      Text(this.message)
-        .fontSize(20)
-        .width('100%')
-        .height('50')
-        .textAlign(TextAlign.Center)
-        .fontWeight(FontWeight.Bold)
-        .onClick(() => {
-          CommonUtil.isFastClick(new Date().getTime())
-        })
-        .height('50')
-      Web({ src: $rawfile('index.html'), controller: this.webviewController })// 将对象注入到web端
-        .javaScriptProxy({
-          object: this.testObj,
-          name: "androidInjected",
-          methodList: ["webCallNative"],
-          controller: this.webviewController
-        })
+      TitleView({}).width('100%')
+        .height($r('app.float.virtual_pixel_50'))
+      WebViewComponent({
+        isShowTitleView: false,
+        weburl: $rawfile('index.html'),
+        objName: TagUtil.HOME_APP_JUMP
+      })
     }
     .width('100%')
     .height('100%')
@@ -59,6 +47,7 @@ struct Index {
   getLifecycle(): Lifecycle {
     return this.mLifecycle
   }
+
   pageTransition() {
     PageTransitionEnter({ type: RouteType.None, duration: 0 })
     PageTransitionExit({ type: RouteType.None, duration: 0 })

@@ -1,4 +1,4 @@
-export class TagUtil {
+export default class TagUtil {
   //登录
   static readonly LOGIN_LOCAL_SERVER: string = 'LOGIN_LOCAL_SERVER';
   static readonly IS_TEST_ENV: string = 'IS_TEST_ENV';
