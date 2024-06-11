@@ -1,4 +1,4 @@
-import WebView from '@ohos.web.webview';
+import myWebView from '@ohos.web.webview';
 import TitleView from '../view/TitleView';
 import TagUtil from '../utils/TagUtil';
 import HomeAppObj from '../js/HomeAppObj';
@@ -9,13 +9,13 @@ export default struct WebViewComponent {
   TAG: string = 'WebViewPage'
   isUseWebTile: boolean = false
   isShowTitleView: boolean = true
-  controller: WebView.WebviewController = new WebView.WebviewController()
+  myController: myWebView.WebviewController = new myWebView.WebviewController()
   @Prop weburl: string | Resource = ''
   title: string = ''
   objName: string = ''
   registerName: string = ''
   // 声明需要注册的对象
-  @State registerObj?: object = new Object()
+  @State registerObj?: object = new HomeAppObj()
   registerMethod?: Array<string>
 
   // 声明需要注册的对象
@@ -27,7 +27,7 @@ export default struct WebViewComponent {
         }).width('100%')
           .height($r('app.float.virtual_pixel_50'))
       }
-      Web({ src: this.weburl, controller: this.controller })
+      Web({ src: this.weburl, controller: this.myController })
         .width('100%')
         .layoutWeight(1)
         .onTitleReceive((event) => {
@@ -52,10 +52,10 @@ export default struct WebViewComponent {
         .enableNativeEmbedMode(true)
           // 将对象注入到web端
         .javaScriptProxy({
-          object: this.registerObj,
-          name: this.registerName,
-          methodList: this.registerMethod,
-          controller: this.controller
+          object: new HomeAppObj(),
+          name: 'iplat',
+          methodList: ["jump_more", 'jump_app', 'jump_apps', 'webCallNative'],
+          controller: this.myController
         })
     }.width('100%')
     .height('100%')

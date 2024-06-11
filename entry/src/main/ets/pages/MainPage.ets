@@ -1,10 +1,12 @@
 import RouterUtil from '../utils/RouterUtil';
 import TitleView from '../view/TitleView';
+import CommonUtil from '../../../../../common/src/main/ets/utils/CommonUtil';
+
 
 @Entry
 @Component
 export struct MainPage {
-  aar: string[] = ['前端和应用交互', 'WebView', '回调']
+  aar: string[] = ['前端和应用交互', 'WebView', '工具类']
 
   build() {
     Column() {
@@ -37,6 +39,7 @@ export struct MainPage {
             } else if (index === 1) {
               RouterUtil.goToWebView('www.baidu.com')
             } else if (index === 2) {
+              CommonUtil.isFastClick(new Date().getTime())
             }
           })
           .stateStyles({

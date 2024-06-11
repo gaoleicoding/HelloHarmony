@@ -10,7 +10,7 @@ export default class CommonUtil {
     }
     let isFast: boolean = nowTime - CommonUtil.lastClickTime < CommonUtil.clickInterval
     if (isFast) {
-      showToast('您点击太快，请稍后再试')
+      showToast($r("app.string.is_fast_click"))
     }
     CommonUtil.lastClickTime = nowTime
     return isFast;

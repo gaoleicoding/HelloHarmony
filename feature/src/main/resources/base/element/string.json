@@ -1,0 +1,13 @@
+{
+  "string": [
+    {
+      "name": "page_show",
+      "value": "page from package"
+    }
+  ,
+    {
+      "name": "is_fast_click",
+      "value": "您点击太快，请稍后再试"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import LogUtil from '../utils/LogUtil';
-import showToast from '../../../../../library/src/main/ets/utils/ToastUtil';
+import showToast from '../../../../../common/src/main/ets/utils/ToastUtil';
 
 
 export default class HomeAppObj {

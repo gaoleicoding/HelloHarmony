@@ -47,8 +47,12 @@
       ]
     },
     {
-      "name": "library",
-      "srcPath": "./library"
+      "name": "common",
+      "srcPath": "./common"
+    },
+    {
+      "name": "feature",
+      "srcPath": "./feature"
     }
   ]
 }
