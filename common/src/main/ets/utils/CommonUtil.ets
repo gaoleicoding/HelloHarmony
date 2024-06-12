@@ -1,6 +1,6 @@
 import showToast from './ToastUtil';
 
-export default class CommonUtil {
+export class CommonUtil {
   static clickInterval: number = 2000;
   static lastClickTime: number = 0;
 

@@ -1,6 +1,6 @@
 import RouterUtil from '../utils/RouterUtil';
 import TitleView from '../view/TitleView';
-import CommonUtil from '../../../../../common/src/main/ets/utils/CommonUtil';
+import { CommonUtil } from 'lib_common';
 
 
 @Entry
