@@ -1,5 +1,5 @@
 import router from '@ohos.router';
-import LogUtil from '../utils/LogUtil';
+import { LogUtil } from 'common_util';
 
 
 export default class ForgetPswObj {

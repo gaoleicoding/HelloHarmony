@@ -2,6 +2,8 @@
   "src": [
     "pages/MainPage",
     "pages/WebNativePage",
-    "pages/WebViewPage"
+    "pages/WebViewPage",
+    "pages/CommonViewPage",
+    "pages/CommonUtilPage"
   ]
 }

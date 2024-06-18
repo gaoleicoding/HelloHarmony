@@ -1,16 +1,16 @@
+import { CryptoJSUtil } from 'common_util/Index';
 import RouterUtil from '../utils/RouterUtil';
 import TitleView from '../view/TitleView';
 
 @Entry
 @Component
 export struct MainPage {
-  aar: string[] = ['前端和应用交互', 'WebView', 'CommonView', 'CommonUtil']
+  aar: string[] = ['加解密']
 
   build() {
     Column() {
       TitleView({
-        title: $r("app.string.app_name"),
-        isShowBackIcon: false
+        title: 'CommonUtil'
       })
       //列表
       List() {
@@ -33,13 +33,9 @@ export struct MainPage {
             .alignItems(VerticalAlign.Center)
           }.onClick(() => {
             if (index === 0) {
-              RouterUtil.goToSepecificPage('pages/WebNativePage')
+              CryptoJSUtil.decryptAES('')
             } else if (index === 1) {
-              RouterUtil.goToWebView('www.baidu.com')
             } else if (index === 2) {
-              RouterUtil.goToSepecificPage('pages/CommonViewPage')
-            } else if (index === 3) {
-              RouterUtil.goToSepecificPage('pages/CommonUtilPage')
             }
           })
           .stateStyles({

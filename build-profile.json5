@@ -47,8 +47,12 @@
       ]
     },
     {
-      "name": "common",
-      "srcPath": "./common"
+      "name": "common_util",
+      "srcPath": "./common_util"
+    },
+    {
+      "name": "common_view",
+      "srcPath": "./common_view"
     },
     {
       "name": "feature",

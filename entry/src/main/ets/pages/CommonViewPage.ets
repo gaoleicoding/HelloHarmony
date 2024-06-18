@@ -1,16 +1,16 @@
 import RouterUtil from '../utils/RouterUtil';
 import TitleView from '../view/TitleView';
+import { CommonUtil } from 'common_util';
 
 @Entry
 @Component
-export struct MainPage {
-  aar: string[] = ['前端和应用交互', 'WebView', 'CommonView', 'CommonUtil']
+export struct CommonUtilPage {
+  aar: string[] = ['前端和应用交互', 'WebView', '工具类']
 
   build() {
     Column() {
       TitleView({
-        title: $r("app.string.app_name"),
-        isShowBackIcon: false
+        title: 'CommonView'
       })
       //列表
       List() {
@@ -37,9 +37,7 @@ export struct MainPage {
             } else if (index === 1) {
               RouterUtil.goToWebView('www.baidu.com')
             } else if (index === 2) {
-              RouterUtil.goToSepecificPage('pages/CommonViewPage')
-            } else if (index === 3) {
-              RouterUtil.goToSepecificPage('pages/CommonUtilPage')
+              CommonUtil.isFastClick(new Date().getTime())
             }
           })
           .stateStyles({

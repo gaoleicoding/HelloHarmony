@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "common_view",
+    "type": "har",
+    "description": "$string:shared_desc",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+    ]
+  }
+}

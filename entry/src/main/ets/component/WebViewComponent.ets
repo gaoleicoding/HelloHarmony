@@ -2,7 +2,7 @@ import myWebView from '@ohos.web.webview';
 import TitleView from '../view/TitleView';
 import TagUtil from '../utils/TagUtil';
 import HomeAppObj from '../js/HomeAppObj';
-import LogUtil from '../utils/LogUtil';
+import { LogUtil } from 'common_util';
 
 @Component
 export default struct WebViewComponent {
@@ -49,8 +49,7 @@ export default struct WebViewComponent {
         .zoomAccess(false)//设置是否支持手势进行缩放，默认允许执行缩放。
         .databaseAccess(true)//设置是否开启数据库存储API权限，默认不开启。
         .allowWindowOpenMethod(true)
-        .enableNativeEmbedMode(true)
-          // 将对象注入到web端
+        .enableNativeEmbedMode(true)// 将对象注入到web端
         .javaScriptProxy({
           object: new HomeAppObj(),
           name: 'iplat',

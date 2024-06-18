@@ -1,7 +1,7 @@
 import HybridEntity from '../bean/HybridEntity';
 import { LiveEventBus } from '@ohos/liveeventbus';
 import EventbusUtil from '../utils/EventbusUtil';
-import JSONUtil from '../utils/JsonUtil';
+import JSONUtil from '../../../../../common_util/src/main/ets/utils/JsonUtil';
 
 export default class JSInterface {
 

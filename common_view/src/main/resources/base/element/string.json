@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "global_confirm",
+      "value": "确定"
+    },
+    {
+      "name": "global_cancel",
+      "value": "取消"
+    }
+  ]
+}

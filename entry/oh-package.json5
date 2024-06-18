@@ -6,7 +6,8 @@
   "author": "",
   "license": "",
   "dependencies": {
-    'lib_common': "file:../common"
+    'common_util': "file:../common_util",
+    'common_view': "file:../common_view"
   }
 }
 

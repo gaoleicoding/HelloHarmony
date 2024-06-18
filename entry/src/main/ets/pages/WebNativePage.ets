@@ -1,6 +1,5 @@
-import showToast from '../../../../../common/src/main/ets/utils/ToastUtil';
+import { ToastUtil } from 'common_util';
 import EventbusUtil from '../utils/EventbusUtil';
-import web_webview from '@ohos.web.webview';
 import { Lifecycle, LiveEventBus, MState } from '@ohos/liveeventbus';
 import WebViewComponent from '../component/WebViewComponent';
 import TagUtil from '../utils/TagUtil';
@@ -11,7 +10,7 @@ import TitleView from '../view/TitleView';
 struct WebNaivePage {
   private mLifecycle: Lifecycle = new Lifecycle(MState.INITIALIZED);
   // webviewController: web_webview.WebviewController = new web_webview.WebviewController();
-  home_app_jump_url:string = 'https://www.fifedu.com/iplat/fifMobile/app_manage/index_h5.html?p=eyJ1c2VySWQiOiIwYTBlNzhhZjFjZTU0YTkxOTM2Mjk4MjdmN2NlYzQwMyIsInNjaG9vbElkIjoiMjAwMDAwMDAyNjAwMDAwMDAwMSIsImxvZ2luTmFtZSI6ImNzQkZTVTE5OTEiLCJzZXNzaW9uSWQiOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKeVpXRnNUbUZ0WlNJNkl1V29uLVdUcFNJc0luTmphRzl2YkVsa0lqb2lNakF3TURBd01EQXlOakF3TURBd01EQXdNU0lzSW1semN5STZJbVpwWm1Gaklpd2lhV1FpT2lJeU9ERXhNREF3TURJMk1EQXhOell4T0RZNUlpd2laWGh3SWpveE56RTRNalEwT1RnM0xDSnRaVzFpWlhKSlpDSTZJakJoTUdVM09HRm1NV05sTlRSaE9URTVNell5T1RneU4yWTNZMlZqTkRBekluMC5velJuRENCRjVpVlpxa0V2UEp0NDBmYTFWeWZmb08xd191ckdreGxtNFlJIiwicm9sZU5hbWUiOiJ0ZWFjaGVyIiwiaXNQcml2YXRlIjoiMCJ9&m=aaa50689f8be041364e0a9e42bc47675'
+  home_app_jump_url: string = 'https://www.fifedu.com/iplat/fifMobile/app_manage/index_h5.html?p=eyJ1c2VySWQiOiIwYTBlNzhhZjFjZTU0YTkxOTM2Mjk4MjdmN2NlYzQwMyIsInNjaG9vbElkIjoiMjAwMDAwMDAyNjAwMDAwMDAwMSIsImxvZ2luTmFtZSI6ImNzQkZTVTE5OTEiLCJzZXNzaW9uSWQiOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKeVpXRnNUbUZ0WlNJNkl1V29uLVdUcFNJc0luTmphRzl2YkVsa0lqb2lNakF3TURBd01EQXlOakF3TURBd01EQXdNU0lzSW1semN5STZJbVpwWm1Gaklpd2lhV1FpT2lJeU9ERXhNREF3TURJMk1EQXhOell4T0RZNUlpd2laWGh3SWpveE56RTRNalEwT1RnM0xDSnRaVzFpWlhKSlpDSTZJakJoTUdVM09HRm1NV05sTlRSaE9URTVNell5T1RneU4yWTNZMlZqTkRBekluMC5velJuRENCRjVpVlpxa0V2UEp0NDBmYTFWeWZmb08xd191ckdreGxtNFlJIiwicm9sZU5hbWUiOiJ0ZWFjaGVyIiwiaXNQcml2YXRlIjoiMCJ9&m=aaa50689f8be041364e0a9e42bc47675'
 
   build() {
     Column() {
@@ -36,7 +35,7 @@ struct WebNaivePage {
       .get<string>(EventbusUtil.KEY_TEST_CLOSE_ALL_PAGE)
       .observe(this, {
         onChanged(s) {
-          showToast(s)
+          ToastUtil.showToast(s)
         }
       });
   }

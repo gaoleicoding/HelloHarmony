@@ -1,7 +1,7 @@
 import WebView from '@ohos.web.webview';
 import router from '@ohos.router';
 import TitleView from '../view/TitleView';
-import LogUtil from '../utils/LogUtil';
+import { LogUtil } from 'common_util';
 
 @Entry
 @Component
